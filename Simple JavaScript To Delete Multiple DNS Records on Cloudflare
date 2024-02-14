@@ -1,0 +1,33 @@
+
+#####################################
+#1. Go to the DNS Record Page
+#2. Expand only those records that you want to delete. Like this - https://i.postimg.cc/LsqLG7GM/SCR-20240214-powp.png
+#3. To accomplish the task, first, access your Developer tools by going to the console. Then, copy and paste the provided codes below. 
+Allow a brief moment for each record to be deleted, as it may take roughly 2 seconds. 
+Finally, refresh the page to observe the outcome.
+#####################################
+
+function clickAndConfirm() {
+    // Select all elements with data-testid="dns-record-form-delete-button"
+    var deleteButtons = document.querySelectorAll('[data-testid="dns-record-form-delete-button"]');
+    
+    // Click each delete button
+    deleteButtons.forEach(function(button) {
+        button.click();
+    });
+
+    // Wait for 2 seconds before confirming deletion
+    setTimeout(function() {
+        // Click the confirm button with data-testid="dns-delete-modal-confirm-button"
+        var confirmButton = document.querySelector('[data-testid="dns-delete-modal-confirm-button"]');
+        if (confirmButton) {
+            confirmButton.click();
+        }
+    }, 2000);
+
+    // Repeat the process after 2 seconds
+    setTimeout(clickAndConfirm, 2000);
+}
+
+// Start the loop
+clickAndConfirm();
