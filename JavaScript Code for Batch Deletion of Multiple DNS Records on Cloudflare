@@ -8,7 +8,6 @@ Finally, refresh the page to observe the outcome.
 #####################################
 
 function clickAndConfirm() {
-    // Select all elements with data-testid="dns-record-form-delete-button"
     var deleteButtons = document.querySelectorAll('[data-testid="dns-record-form-delete-button"]');
     
     // Click each delete button
@@ -18,7 +17,6 @@ function clickAndConfirm() {
 
     // Wait for 2 seconds before confirming deletion
     setTimeout(function() {
-        // Click the confirm button with data-testid="dns-delete-modal-confirm-button"
         var confirmButton = document.querySelector('[data-testid="dns-delete-modal-confirm-button"]');
         if (confirmButton) {
             confirmButton.click();
@@ -31,3 +29,15 @@ function clickAndConfirm() {
 
 // Start the loop
 clickAndConfirm();
+
+
+#############################################
+# If you want to delete all the records then 
+# Just run this to expand all the records at once.
+#############################################
+
+var editLinks = document.querySelectorAll('[data-testid="dns-table-row-edit-link"]');
+editLinks.forEach(function(link) {
+    link.click();
+});
+
