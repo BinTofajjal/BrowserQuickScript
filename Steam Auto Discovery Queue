@@ -1,0 +1,42 @@
+// Function to click the "Refresh Queue" button
+function clickRefreshQueue() {
+    // Find the "Refresh Queue" button element
+    const refreshQueueButton = document.querySelector('.btnv6_lightblue_blue');
+
+    // Check if the button element exists
+    if (refreshQueueButton) {
+        // Simulate a click on the button
+        refreshQueueButton.click();
+        console.log("Clicked Refresh Queue button.");
+
+        // Wait for a short delay before calling the function to click the "Next in Queue" button
+        setTimeout(clickNextInQueue, 2000); // Adjust the delay (in milliseconds) as needed
+    } else {
+        console.log("Refresh Queue button not found. Trying Next in Queue button...");
+        // If "Refresh Queue" button is not found, call the function to click the "Next in Queue" button
+        clickNextInQueue();
+    }
+}
+
+// Function to click the "Next in Queue" button
+function clickNextInQueue() {
+    // Find the "Next in Queue" button element
+    const nextInQueueButton = document.querySelector('.btn_next_in_queue_trigger');
+
+    // Check if the button element exists
+    if (nextInQueueButton) {
+        // Simulate a click on the button
+        nextInQueueButton.click();
+        console.log("Clicked Next in Queue button.");
+
+        // Wait for a short delay before calling the function to click the "Refresh Queue" button
+        setTimeout(clickRefreshQueue, 2000); // Adjust the delay (in milliseconds) as needed
+    } else {
+        console.log("Next in Queue button not found. End of queue reached.");
+        // If "Next in Queue" button is not found, call the function to click the "Refresh Queue" button
+        clickRefreshQueue();
+    }
+}
+
+// Start the loop by calling the function to click the "Refresh Queue" button
+clickRefreshQueue();
