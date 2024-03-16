@@ -18,26 +18,6 @@ function clickRefreshQueue() {
     }
 }
 
-// Function to click the "Refresh Queue V2" button
-function clickRefreshQueue2() {
-    // Find the "Refresh Queue" button element
-    const refreshQueueButton = document.querySelector('.queue_actions_ctn');
-
-    // Check if the button element exists
-    if (refreshQueueButton) {
-        // Simulate a click on the button
-        refreshQueueButton.click();
-        console.log("Clicked Refresh Queue button.");
-
-        // Wait for a short delay before calling the function to click the "Next in Queue" button
-        setTimeout(clickNextInQueue, 1000); // Adjust the delay (in milliseconds) as needed
-    } else {
-        console.log("Refresh Queue button not found. Trying Next in Queue button...");
-        // If "Refresh Queue" button is not found, call the function to click the "Next in Queue" button
-        clickNextInQueue2();
-    }
-}
-
 // Function to click the "Next in Queue" button
 function clickNextInQueue() {
     // Find the "Next in Queue" button element
