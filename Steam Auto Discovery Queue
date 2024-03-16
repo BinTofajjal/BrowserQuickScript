@@ -21,7 +21,7 @@ function clickRefreshQueue() {
 // Function to click the "Refresh Queue V2" button
 function clickRefreshQueue2() {
     // Find the "Refresh Queue" button element
-    const refreshQueueButton = document.querySelector('queue_actions_ctn');
+    const refreshQueueButton = document.querySelector('.queue_actions_ctn');
 
     // Check if the button element exists
     if (refreshQueueButton) {
